@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 
 ARG PORT=5000
 
-RUN npm install -g pnpm
+RUN npm install -g pnpm@6.32.13
 
 COPY package*.json ./
 COPY pnpm-lock.yaml ./
@@ -13,4 +13,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE ${PORT}
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
